@@ -21,14 +21,18 @@ class QuestionsViewController: UIViewController {
         setDefaultBorders()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     
     //MARK: Properties
     
     var questions = Questions()
+    
+    let borderMaxWidth = CGFloat(2)
+    let borderMinWidth = CGFloat(0.5)
+    let cornerRadius = CGFloat(40)
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     
     
     //MARK: @IBOutlets
@@ -49,16 +53,16 @@ class QuestionsViewController: UIViewController {
         switch sender {
         case exellentButton:
             questions.questionsArray[questions.currentQuestion].mark = .exellent
-            exellentButton.layer.borderWidth = 2
+            exellentButton.layer.borderWidth = borderMaxWidth
         case goodButton:
             questions.questionsArray[questions.currentQuestion].mark = .good
-            goodButton.layer.borderWidth = 2
+            goodButton.layer.borderWidth = borderMaxWidth
         case neutralButton:
             questions.questionsArray[questions.currentQuestion].mark = .neutral
-            neutralButton.layer.borderWidth = 2
+            neutralButton.layer.borderWidth = borderMaxWidth
         case badButton:
             questions.questionsArray[questions.currentQuestion].mark = .bad
-            badButton.layer.borderWidth = 2
+            badButton.layer.borderWidth = borderMaxWidth
         default:
             break
         }
@@ -74,24 +78,24 @@ class QuestionsViewController: UIViewController {
     }
     
     fileprivate func setDefaultBorders() {
-        exellentButton.layer.cornerRadius = 40
+        exellentButton.layer.cornerRadius = cornerRadius
         exellentButton.layer.borderColor = UIColor.white.cgColor
-        exellentButton.layer.borderWidth = 0.5
+        exellentButton.layer.borderWidth = borderMinWidth
         exellentButton.clipsToBounds = true
         
-        goodButton.layer.cornerRadius = 40
+        goodButton.layer.cornerRadius = cornerRadius
         goodButton.layer.borderColor = UIColor.white.cgColor
-        goodButton.layer.borderWidth = 0.5
+        goodButton.layer.borderWidth = borderMinWidth
         goodButton.clipsToBounds = true
         
-        neutralButton.layer.cornerRadius = 40
+        neutralButton.layer.cornerRadius = cornerRadius
         neutralButton.layer.borderColor = UIColor.white.cgColor
-        neutralButton.layer.borderWidth = 0.5
+        neutralButton.layer.borderWidth = borderMinWidth
         neutralButton.clipsToBounds = true
         
-        badButton.layer.cornerRadius = 40
+        badButton.layer.cornerRadius = cornerRadius
         badButton.layer.borderColor = UIColor.white.cgColor
-        badButton.layer.borderWidth = 0.5
+        badButton.layer.borderWidth = borderMinWidth
         badButton.clipsToBounds = true
     }
     
@@ -113,6 +117,14 @@ class QuestionsViewController: UIViewController {
             questionScrollView.addSubview(questionViews[i])
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ResultSegue" {
+            if let resultVC = (segue.destination as? ResultViewController) {
+                resultVC.questions = self.questions
+            }
+        }
+    }
 }
 
 
@@ -129,13 +141,13 @@ extension QuestionsViewController: UIScrollViewDelegate {
         
         switch mark {
         case .exellent:
-            exellentButton.layer.borderWidth = 2
+            exellentButton.layer.borderWidth = borderMaxWidth
         case .good:
-            goodButton.layer.borderWidth = 2
+            goodButton.layer.borderWidth = borderMaxWidth
         case .neutral:
-            neutralButton.layer.borderWidth = 2
+            neutralButton.layer.borderWidth = borderMaxWidth
         case .bad:
-            badButton.layer.borderWidth = 2
+            badButton.layer.borderWidth = borderMaxWidth
         case .none:
             break
         }
