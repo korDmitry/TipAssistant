@@ -16,19 +16,33 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         questionScrollView.delegate = self
         questionPageControl.numberOfPages = questions.questionsArray.count
-        setUpQuestionScrollView(createQuestionViews())
         setNavigationBar()
         setDefaultBorders()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        setUpQuestionScrollView(createQuestionViews())
     }
     
     
     //MARK: Properties
     
-    var questions = Questions()
+    fileprivate var questions = Questions()
     
-    let borderMaxWidth = CGFloat(2)
-    let borderMinWidth = CGFloat(0.5)
-    let cornerRadius = CGFloat(40)
+    fileprivate let borderMaxWidth = CGFloat(2)
+    fileprivate let borderMinWidth = CGFloat(0.5)
+    private var cornerRadius: CGFloat {
+        switch view.frame.width {
+        case 320:
+            return CGFloat(28)
+        case 375:
+            return CGFloat(38)
+        case 414:
+            return CGFloat(43)
+        default:
+            return CGFloat(38)
+        }
+    }
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
@@ -114,6 +128,7 @@ class QuestionsViewController: UIViewController {
         
         for i in 0 ..< questions.questionsArray.count {
             questionViews[i].frame = CGRect(x: questionScrollView.frame.width * CGFloat(i), y: 0, width:  questionScrollView.frame.width, height:  questionScrollView.frame.height)
+            print(questionViews[i])
             questionScrollView.addSubview(questionViews[i])
         }
     }
