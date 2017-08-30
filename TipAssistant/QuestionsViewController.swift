@@ -10,9 +10,8 @@ import UIKit
 
 class QuestionsViewController: UIViewController {
     
+    
     //MARK: VC lifecycle
-    
-    
     
     override func viewDidLoad() {
         questionScrollView.delegate = self
@@ -26,11 +25,14 @@ class QuestionsViewController: UIViewController {
         return .lightContent
     }
     
+    
     //MARK: Properties
     
     var questions = Questions()
     
+    
     //MARK: @IBOutlets
+    
     @IBOutlet weak var exellentButton: UIButton!
     @IBOutlet weak var goodButton: UIButton!
     @IBOutlet weak var neutralButton: UIButton!
@@ -39,6 +41,8 @@ class QuestionsViewController: UIViewController {
     @IBOutlet weak var questionScrollView: UIScrollView!
     @IBOutlet weak var questionPageControl: UIPageControl!
     
+    
+    //MARK: @IBActions
     
     @IBAction func setMark(_ sender: UIButton) {
         setDefaultBorders()
@@ -110,6 +114,9 @@ class QuestionsViewController: UIViewController {
         }
     }
 }
+
+
+//MARK: Extensions
 
 extension QuestionsViewController: UIScrollViewDelegate {
     
