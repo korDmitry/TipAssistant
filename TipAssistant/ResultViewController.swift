@@ -10,6 +10,7 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    
     //MARK: @VS lifecycle
     
     override func viewDidLoad() {
@@ -25,6 +26,7 @@ class ResultViewController: UIViewController {
     @IBOutlet weak var splitBillSlider: UISlider!
     
     @IBOutlet weak var billAmountTextField: UITextField!
+    @IBOutlet weak var tipPercentLabel: UILabel!
     @IBOutlet weak var splitBillLabel: UILabel!
     
     @IBOutlet weak var costLabel: UILabel!
@@ -50,7 +52,16 @@ class ResultViewController: UIViewController {
         }
     }
     
+    @IBAction func tipAmountChanged(_ sender: UISlider) {
+        let value = Int(sender.value)
+        tipPercentLabel.text = "Tip \(value)%"
+        tipLabel.text = String(Double(costLabel.text!)! * Double(value) / 100)
+    }
     
+    @IBAction func splitBillValueChanged(_ sender: UISlider) {
+        let value = Int(sender.value)
+        splitBillLabel.text = "Split Bill: \(value)"
+    }
     
     //MARK: Functions
     
