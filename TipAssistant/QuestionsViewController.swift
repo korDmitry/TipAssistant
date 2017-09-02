@@ -40,7 +40,7 @@ class QuestionsViewController: UIViewController {
         case 414:
             return CGFloat(43)
         default:
-            return CGFloat(38)
+            return CGFloat(36)
         }
     }
     
