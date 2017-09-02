@@ -182,7 +182,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Background" translatesAutoresizingMaskIntoConstraints="NO" id="smL-Br-coo">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u1Y-xR-Aec">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="u1Y-xR-Aec" userLabel="Main Stack View">
                                 <rect key="frame" x="16" y="64" width="343" height="583"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="R5E-sK-FA0" userLabel="Bill Amount Stack View">
@@ -198,7 +198,7 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-pJ-WBD">
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-pJ-WBD">
                                                 <rect key="frame" x="96.5" y="55" width="150" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="FJ6-RU-ruN"/>
@@ -391,6 +391,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="u1Y-xR-Aec" secondAttribute="trailing" id="zBV-p7-Li7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="TipSlider" destination="hPb-90-7mD" id="n7g-SD-YNp"/>
+                        <outlet property="billAmountTextField" destination="n9o-pJ-WBD" id="O4v-D1-2gA"/>
+                        <outlet property="costLabel" destination="lHi-sS-0gA" id="gj1-DE-Zmd"/>
+                        <outlet property="costPerPersonLabel" destination="xBW-Ts-pe3" id="ezc-l5-Z5q"/>
+                        <outlet property="resultLabel" destination="ucy-q3-RMG" id="3gc-BP-018"/>
+                        <outlet property="splitBillLabel" destination="MJP-Lr-0d3" id="vef-QQ-JFn"/>
+                        <outlet property="splitBillSlider" destination="Zlr-qI-eUx" id="CyQ-u8-CpC"/>
+                        <outlet property="tipLabel" destination="LGC-OM-NUF" id="9ML-B2-TeL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kxC-Hc-owF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

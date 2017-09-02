@@ -11,6 +11,20 @@ import UIKit
 class ResultViewController: UIViewController {
     
     
+    //MARK: @IBOutlets
+    
+    @IBOutlet weak var TipSlider: UISlider!
+    @IBOutlet weak var splitBillSlider: UISlider!
+    
+    @IBOutlet weak var billAmountTextField: UITextField!
+    @IBOutlet weak var splitBillLabel: UILabel!
+    
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var tipLabel: UILabel!
+    @IBOutlet weak var costPerPersonLabel: UILabel!
+    @IBOutlet weak var resultLabel: UILabel!
+    
+    
     //MARK: Properties
     
     var questions = Questions()
