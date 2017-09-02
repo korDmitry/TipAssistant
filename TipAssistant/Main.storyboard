@@ -189,28 +189,30 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bill amount" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgG-ok-WGr">
-                                                <rect key="frame" x="96.5" y="0.0" width="150" height="50"/>
+                                                <rect key="frame" x="96.5" y="0.0" width="150" height="45"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="2f5-CU-8Mq"/>
-                                                    <constraint firstAttribute="height" constant="50" id="Rzr-fv-vGr"/>
+                                                    <constraint firstAttribute="height" constant="45" id="Rzr-fv-vGr"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="30"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-pJ-WBD">
-                                                <rect key="frame" x="96.5" y="55" width="150" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9o-pJ-WBD">
+                                                <rect key="frame" x="55" y="50" width="233" height="35"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="30" id="FJ6-RU-ruN"/>
+                                                    <constraint firstAttribute="height" constant="35" id="FJ6-RU-ruN"/>
                                                 </constraints>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                                <connections>
+                                                    <action selector="billAmountChanged:" destination="nJb-lz-E4I" eventType="editingDidEnd" id="mQM-AI-8NN"/>
+                                                </connections>
                                             </textField>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="n9o-pJ-WBD" firstAttribute="width" secondItem="DgG-ok-WGr" secondAttribute="width" id="bDa-qA-3Z7"/>
-                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="WiY-3p-w1m" userLabel="Tip Stack View">
                                         <rect key="frame" x="0.0" y="121" width="343" height="85"/>
@@ -235,6 +237,7 @@
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minValue="0.0" maxValue="30" translatesAutoresizingMaskIntoConstraints="NO" id="hPb-90-7mD">
                                                         <rect key="frame" x="53" y="0.0" width="237" height="51"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </slider>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XaQ-ow-8vr">
                                                         <rect key="frame" x="293" y="0.0" width="50" height="50"/>
@@ -270,8 +273,9 @@
                                                             <constraint firstAttribute="width" constant="50" id="cWg-ir-1KV"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zlr-qI-eUx">
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="Zlr-qI-eUx">
                                                         <rect key="frame" x="53" y="0.0" width="237" height="51"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </slider>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GQQ-ch-ZGI">
                                                         <rect key="frame" x="293" y="0.0" width="50" height="50"/>
@@ -378,6 +382,9 @@
                                         </subviews>
                                     </stackView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="n9o-pJ-WBD" firstAttribute="width" secondItem="hPb-90-7mD" secondAttribute="width" id="pPE-sB-Z7O"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

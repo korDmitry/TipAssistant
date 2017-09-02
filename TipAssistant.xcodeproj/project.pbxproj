@@ -64,11 +64,11 @@
 		C16C23091F52AB9E00DC1086 /* TipAssistant */ = {
 			isa = PBXGroup;
 			children = (
-				C17A64131F561B29004BD224 /* Views */,
 				C16C231D1F52AC2E00DC1086 /* Main.storyboard */,
 				C16C231F1F52AC8B00DC1086 /* QuestionsViewController.swift */,
 				C16C23211F52AD0200DC1086 /* ResultViewController.swift */,
 				C17A641A1F56598A004BD224 /* InformationViewController.swift */,
+				C17A64131F561B29004BD224 /* Views */,
 				C17A641C1F565997004BD224 /* Models */,
 				C16C231C1F52ABD700DC1086 /* Supporting */,
 			);

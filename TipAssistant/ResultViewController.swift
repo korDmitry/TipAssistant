@@ -10,6 +10,14 @@ import UIKit
 
 class ResultViewController: UIViewController {
     
+    //MARK: @VS lifecycle
+    
+    override func viewDidLoad() {
+        billAmountTextField.layer.cornerRadius = 15
+        billAmountTextField.layer.borderWidth = 0.5
+        billAmountTextField.layer.borderColor = UIColor.white.cgColor
+    }
+    
     
     //MARK: @IBOutlets
     
@@ -28,5 +36,26 @@ class ResultViewController: UIViewController {
     //MARK: Properties
     
     var questions = Questions()
+    
+    
+    //MARK: IBActions
+    
+    @IBAction func billAmountChanged(_ sender: UITextField) {
+        let text = billAmountTextField.text
+        if text != nil && text != "" {
+            costLabel.text = text
+        }
+        else {
+            costLabel.text = "0"
+        }
+    }
+    
+    
+    
+    //MARK: Functions
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        self.view.endEditing(true)
+    }
     
 }
