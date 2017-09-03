@@ -11,7 +11,7 @@ import UIKit
 class QuestionsViewController: UIViewController {
     
     
-    //MARK: VC lifecycle
+    //MARK: VC Lifecycle
     
     override func viewDidLoad() {
         questionScrollView.delegate = self
@@ -22,30 +22,6 @@ class QuestionsViewController: UIViewController {
     
     override func viewDidLayoutSubviews() {
         setUpQuestionScrollView(createQuestionViews())
-    }
-    
-    
-    //MARK: Properties
-    
-    fileprivate var questions = Questions()
-    
-    fileprivate let borderMaxWidth = CGFloat(2)
-    fileprivate let borderMinWidth = CGFloat(0.5)
-    private var cornerRadius: CGFloat {
-        switch view.frame.width {
-        case 320:
-            return CGFloat(28)
-        case 375:
-            return CGFloat(38)
-        case 414:
-            return CGFloat(43)
-        default:
-            return CGFloat(36)
-        }
-    }
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
     }
     
     
@@ -82,7 +58,31 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    //MARK: Private functions
+    
+    //MARK: Properties
+    
+    fileprivate var questions = Questions()
+    
+    fileprivate let borderMaxWidth = CGFloat(2)
+    fileprivate let borderMinWidth = CGFloat(0.5)
+    private var cornerRadius: CGFloat {
+        switch view.frame.width {
+        case 320:
+            return CGFloat(28)
+        case 375:
+            return CGFloat(38)
+        case 414:
+            return CGFloat(43)
+        default:
+            return CGFloat(36)
+        }
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    //MARK: Functions
     
     private func setNavigationBar() {
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -128,7 +128,6 @@ class QuestionsViewController: UIViewController {
         
         for i in 0 ..< questions.questionsArray.count {
             questionViews[i].frame = CGRect(x: questionScrollView.frame.width * CGFloat(i), y: 0, width:  questionScrollView.frame.width, height:  questionScrollView.frame.height)
-            print(questionViews[i])
             questionScrollView.addSubview(questionViews[i])
         }
     }
