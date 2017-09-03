@@ -43,18 +43,23 @@ class QuestionsViewController: UIViewController {
         switch sender {
         case exellentButton:
             questions.questionsArray[questions.currentQuestion].mark = .exellent
-            exellentButton.layer.borderWidth = borderMaxWidth
         case goodButton:
             questions.questionsArray[questions.currentQuestion].mark = .good
-            goodButton.layer.borderWidth = borderMaxWidth
         case neutralButton:
             questions.questionsArray[questions.currentQuestion].mark = .neutral
-            neutralButton.layer.borderWidth = borderMaxWidth
         case badButton:
             questions.questionsArray[questions.currentQuestion].mark = .bad
-            badButton.layer.borderWidth = borderMaxWidth
         default:
             break
+        }
+        
+        if questions.currentQuestion < questions.questionsArray.count - 1 {
+            let i = questions.currentQuestion + 1
+            let rec = CGRect(x: questionScrollView.frame.width * CGFloat(i), y: 0, width:  questionScrollView.frame.width, height:  questionScrollView.frame.height)
+            questionScrollView.scrollRectToVisible(rec, animated: true)
+        }
+        else {
+            self.performSegue(withIdentifier: "ResultSegue", sender: self)
         }
     }
     
