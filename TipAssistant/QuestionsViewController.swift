@@ -60,6 +60,7 @@ class QuestionsViewController: UIViewController {
         }
         else {
             self.performSegue(withIdentifier: "ResultSegue", sender: self)
+            sender.layer.borderWidth = borderMaxWidth
         }
     }
     
@@ -151,7 +152,15 @@ class QuestionsViewController: UIViewController {
 
 extension QuestionsViewController: UIScrollViewDelegate {
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+        showMark(scrollView)
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        showMark(scrollView)
+    }
+    
+    private func showMark(_ scrollView: UIScrollView) {
         questionPageControl.currentPage = Int(round(questionScrollView.contentOffset.x/questionScrollView.frame.width))
         questions.currentQuestion = questionPageControl.currentPage
         
