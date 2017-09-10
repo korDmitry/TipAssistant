@@ -17,6 +17,7 @@
 		C17A64171F561FF8004BD224 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A64161F561FF8004BD224 /* QuestionView.swift */; };
 		C17A64191F562013004BD224 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17A64181F562013004BD224 /* QuestionView.xib */; };
 		C17A641B1F56598A004BD224 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A641A1F56598A004BD224 /* InformationViewController.swift */; };
+		C1DAF7711F64BF8700AEF9E3 /* TipCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAF7701F64BF8700AEF9E3 /* TipCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C17A64161F561FF8004BD224 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = ../QuestionView.swift; sourceTree = "<group>"; };
 		C17A64181F562013004BD224 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
 		C17A641A1F56598A004BD224 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		C1DAF7701F64BF8700AEF9E3 /* TipCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				C17580071F53CA12005FE948 /* Questions.swift */,
+				C1DAF7701F64BF8700AEF9E3 /* TipCalculator.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -183,6 +186,7 @@
 				C16C230B1F52AB9E00DC1086 /* AppDelegate.swift in Sources */,
 				C16C23221F52AD0200DC1086 /* ResultViewController.swift in Sources */,
 				C17A641B1F56598A004BD224 /* InformationViewController.swift in Sources */,
+				C1DAF7711F64BF8700AEF9E3 /* TipCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,7 +13,13 @@ class ResultViewController: UIViewController {
     
     //MARK: @VS Lifecycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        calculateTip()
+    }
+    
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setBorders()
     }
     
@@ -67,6 +73,7 @@ class ResultViewController: UIViewController {
             return Int(tipSlider.value)
         }
         set {
+            tipSlider.value = Float(newValue)
             tipPercentLabel.text = "Tip: \(newValue)%"
             calculateSummary()
         }
@@ -158,6 +165,11 @@ class ResultViewController: UIViewController {
         billAmountTextField.layer.cornerRadius = 15
         billAmountTextField.layer.borderWidth = 0.5
         billAmountTextField.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    private func calculateTip() {
+        let calculator = TipCalculator(questions: questions)
+        tipPercentValue = calculator.calculateTip(withStartValue: tipPercentValue)
     }
 }
 
