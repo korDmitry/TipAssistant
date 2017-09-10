@@ -47,7 +47,7 @@
                                 <rect key="frame" x="16" y="292" width="343" height="355"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48t-qP-FrG">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="76.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="77"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Exellent">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -57,7 +57,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iek-nR-um1">
-                                        <rect key="frame" x="0.0" y="92.5" width="343" height="77"/>
+                                        <rect key="frame" x="0.0" y="93" width="343" height="76.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Good">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,7 +67,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18n-xZ-TRz">
-                                        <rect key="frame" x="0.0" y="185.5" width="343" height="76.5"/>
+                                        <rect key="frame" x="0.0" y="185.5" width="343" height="77"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Neutral">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -77,7 +77,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-nW-6NK">
-                                        <rect key="frame" x="0.0" y="278" width="343" height="77"/>
+                                        <rect key="frame" x="0.0" y="278.5" width="343" height="76.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Bad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -114,7 +114,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="NVJ-bS-LrH">
-                        <barButtonItem key="leftBarButtonItem" image="Info" id="ILO-rv-hzj">
+                        <barButtonItem key="leftBarButtonItem" image="Settings" id="ILO-rv-hzj">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="Xic-q4-M3L" kind="show" identifier="InformationSegue" id="yD8-m8-gPe"/>
@@ -141,10 +141,10 @@
             </objects>
             <point key="canvasLocation" x="258" y="45"/>
         </scene>
-        <!--Information View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="hAg-4j-g9d">
             <objects>
-                <viewController id="Xic-q4-M3L" customClass="InformationViewController" customModule="TipAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Xic-q4-M3L" customClass="SettingsViewController" customModule="TipAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bak-6P-iql"/>
                         <viewControllerLayoutGuide type="bottom" id="qlG-DR-p8q"/>
@@ -430,9 +430,9 @@
     </scenes>
     <resources>
         <image name="Background" width="375" height="667"/>
-        <image name="Info" width="25" height="25"/>
         <image name="Next" width="25" height="25"/>
-        <image name="Person" width="64" height="64"/>
-        <image name="Persons" width="64" height="64"/>
+        <image name="Person" width="25" height="25"/>
+        <image name="Persons" width="25" height="25"/>
+        <image name="Settings" width="25" height="25"/>
     </resources>
 </document>
