@@ -158,8 +158,6 @@ class ResultViewController: UIViewController {
         billAmountTextField.layer.cornerRadius = 15
         billAmountTextField.layer.borderWidth = 0.5
         billAmountTextField.layer.borderColor = UIColor.white.cgColor
-        
-        tipStackView.layer.addBorder(edge: UIRectEdge.bottom, color: UIColor.white, thickness: 0.5)
     }
 }
 
