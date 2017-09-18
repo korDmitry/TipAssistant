@@ -28,4 +28,4 @@ enum UserDefaultsKeys {
     static let language = "Language"
 }
 
-let languages: [String] = ["English", "Russian"]
+let languages: [String] = ["English", "Русский", "Español", "Deutsch"]

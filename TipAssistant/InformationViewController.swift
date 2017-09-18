@@ -18,6 +18,11 @@ class SettingsViewController: UIViewController {
         setDefaults()
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        setBorders()
+    }
+    
     
     //MARK: IBOutlets
     
@@ -29,7 +34,7 @@ class SettingsViewController: UIViewController {
     
     //MARK: Properties
     
-    let userDefaults = UserDefaults.standard
+    fileprivate let userDefaults = UserDefaults.standard
     
     
     //MARK: @IBActions
@@ -57,7 +62,7 @@ class SettingsViewController: UIViewController {
         self.view.endEditing(true)
     }
     
-    func setDefaults() {
+    private func setDefaults() {
         
         let establishment = userDefaults.string(forKey: UserDefaultsKeys.establishment)
         if establishment == Establishments.restaurant {
@@ -91,6 +96,12 @@ class SettingsViewController: UIViewController {
         let row = languages.index(of: language!)!
         languagePickerView.selectRow(row, inComponent: 0, animated: false)
     }
+    
+    private func setBorders() {
+        maxTipTextField.layer.cornerRadius = 15
+        maxTipTextField.layer.borderWidth = 0.5
+        maxTipTextField.layer.borderColor = UIColor.white.cgColor
+    }
 }
 
 
@@ -106,11 +117,15 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         return languages.count
     }
     
+    func pickerView(_ pickerView: UIPickerView, rowHeightForComponent component: Int) -> CGFloat {
+        return 40.0
+    }
+    
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
         let text = languages[row]
         
         let title = NSAttributedString(string: text, attributes: [
-            NSFontAttributeName : UIFont.systemFont(ofSize: 30.0, weight: UIFontWeightThin),
+            NSFontAttributeName : UIFont.systemFont(ofSize: 25.0, weight: UIFontWeightThin),
             NSForegroundColorAttributeName : UIColor.white
             ])
         
@@ -125,5 +140,4 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         let language = languages[row]
         userDefaults.set(language, forKey: UserDefaultsKeys.language)
     }
-    
 }
