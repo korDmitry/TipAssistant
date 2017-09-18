@@ -14,6 +14,7 @@ class QuestionsViewController: UIViewController {
     //MARK: VC Lifecycle
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         questionScrollView.delegate = self
         questionPageControl.numberOfPages = questions.questionsArray.count
         setNavigationBar()
@@ -21,6 +22,7 @@ class QuestionsViewController: UIViewController {
     }
     
     override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setUpQuestionScrollView(createQuestionViews())
     }
     

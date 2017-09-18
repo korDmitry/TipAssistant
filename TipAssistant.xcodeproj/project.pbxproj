@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C11686AE1F6F53DD00496D7D /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C11686AD1F6F53DD00496D7D /* Settings.swift */; };
 		C16C230B1F52AB9E00DC1086 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C16C230A1F52AB9E00DC1086 /* AppDelegate.swift */; };
 		C16C23121F52AB9E00DC1086 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C16C23111F52AB9E00DC1086 /* Assets.xcassets */; };
 		C16C23151F52AB9E00DC1086 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C16C23131F52AB9E00DC1086 /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C11686AD1F6F53DD00496D7D /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C16C23071F52AB9E00DC1086 /* TipAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TipAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C16C230A1F52AB9E00DC1086 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C16C23111F52AB9E00DC1086 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 			children = (
 				C17580071F53CA12005FE948 /* Questions.swift */,
 				C1DAF7701F64BF8700AEF9E3 /* TipCalculator.swift */,
+				C11686AD1F6F53DD00496D7D /* Settings.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 				C17580081F53CA12005FE948 /* Questions.swift in Sources */,
 				C16C230B1F52AB9E00DC1086 /* AppDelegate.swift in Sources */,
 				C16C23221F52AD0200DC1086 /* ResultViewController.swift in Sources */,
+				C11686AE1F6F53DD00496D7D /* Settings.swift in Sources */,
 				C17A641B1F56598A004BD224 /* InformationViewController.swift in Sources */,
 				C1DAF7711F64BF8700AEF9E3 /* TipCalculator.swift in Sources */,
 			);
