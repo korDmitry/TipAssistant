@@ -45,6 +45,12 @@ class ResultViewController: UIViewController {
     
     var questions = Questions()
     
+    private let userDefaults = UserDefaults.standard
+    
+    private var currency: String {
+        return userDefaults.string(forKey: UserDefaultsKeys.currency)!
+    }
+    
     private var formatter: NumberFormatter {
         get {
             let formatter = NumberFormatter()
@@ -60,7 +66,7 @@ class ResultViewController: UIViewController {
     
     private var billAmountTextFieldText: String {
         get {
-            return (formatter.number(from: billAmountTextField.text!)?.stringValue)!
+            return formatCurrencyString(billAmountTextField.text!)
         }
         set {
             billAmountTextField.text = newValue
@@ -91,7 +97,7 @@ class ResultViewController: UIViewController {
     
     private var costLabelText: String {
         get {
-            return (formatter.number(from: costLabel.text!)?.stringValue)!
+            return formatCurrencyString(costLabel.text!)
         }
         set {
             costLabel.text = newValue
@@ -100,7 +106,7 @@ class ResultViewController: UIViewController {
     
     private var tipLabelText: String {
         get {
-            return (formatter.number(from: tipLabel.text!)?.stringValue)!
+            return formatCurrencyString(tipLabel.text!)
         }
         set {
             tipLabel.text = newValue
@@ -109,7 +115,7 @@ class ResultViewController: UIViewController {
     
     private var resultLabelText: String {
         get {
-            return (formatter.number(from: resultLabel.text!)?.stringValue)!
+            return formatCurrencyString(resultLabel.text!)
         }
         set {
             resultLabel.text = newValue
@@ -132,7 +138,7 @@ class ResultViewController: UIViewController {
         let text = billAmountTextField.text
         if text != nil && text != "" {
             let value = formatter.number(from: text!)
-            billAmountTextFieldText = formatter.string(from: value!)!
+            billAmountTextFieldText = formatter.string(from: value!)! + " \(currency)"
         }
         else {
             billAmountTextFieldText = "0"
@@ -154,11 +160,16 @@ class ResultViewController: UIViewController {
         self.view.endEditing(true)
     }
     
+    private func formatCurrencyString(_ string: String) -> String {
+        let text = string.replacingOccurrences(of: currency, with: "")
+        return (formatter.number(from: text)?.stringValue)!
+    }
+    
     private func calculateSummary() {
-        costLabelText = formatter.string(from: NSNumber(value: Double(billAmountTextFieldText)!))!
-        tipLabelText = formatter.string(from: NSNumber(value: (Double(costLabelText)! * Double(tipPercentValue) / 100)))!
-        resultLabelText = formatter.string(from: NSNumber(value: Double(costLabelText)! + Double(tipLabelText)!))!
-        costPerPersonLabelText = formatter.string(from: NSNumber(value: Double(resultLabelText)! / Double(splitBillValue)))!
+        costLabelText = formatter.string(from: NSNumber(value: Double(billAmountTextFieldText)!))! + " \(currency)"
+        tipLabelText = formatter.string(from: NSNumber(value: (Double(costLabelText)! * Double(tipPercentValue) / 100)))! + " \(currency)"
+        resultLabelText = formatter.string(from: NSNumber(value: Double(costLabelText)! + Double(tipLabelText)!))! + " \(currency)"
+        costPerPersonLabelText = formatter.string(from: NSNumber(value: Double(resultLabelText)! / Double(splitBillValue)))! + " \(currency)"
     }
     
     private func setBorders() {
