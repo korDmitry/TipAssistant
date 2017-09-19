@@ -18,6 +18,10 @@ class QuestionsViewController: UIViewController {
         questionScrollView.delegate = self
         setNavigationBar()
         setDefaultBorders()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
         setQuestions()
     }
     
