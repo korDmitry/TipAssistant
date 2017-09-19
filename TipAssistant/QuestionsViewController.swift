@@ -92,10 +92,6 @@ class QuestionsViewController: UIViewController {
         }
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
-    
     //MARK: Functions
     
     private func setNavigationBar() {
@@ -215,6 +211,12 @@ extension QuestionsViewController: UIScrollViewDelegate {
         case .none:
             break
         }
+    }
+}
+
+extension UINavigationController {
+    override open var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
 }
 
