@@ -11,7 +11,7 @@ import UIKit
 class ResultViewController: UIViewController {
     
     
-    //MARK: @VS Lifecycle
+    //MARK: VS Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +44,7 @@ class ResultViewController: UIViewController {
     
     //MARK: Properties
     
-    var questions = Questions()
+    var questions: Questions = RestaurantQuestions()
     
     private let userDefaults = UserDefaults.standard
     

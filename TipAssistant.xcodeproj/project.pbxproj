@@ -17,7 +17,7 @@
 		C17580081F53CA12005FE948 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17580071F53CA12005FE948 /* Questions.swift */; };
 		C17A64171F561FF8004BD224 /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A64161F561FF8004BD224 /* QuestionView.swift */; };
 		C17A64191F562013004BD224 /* QuestionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C17A64181F562013004BD224 /* QuestionView.xib */; };
-		C17A641B1F56598A004BD224 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A641A1F56598A004BD224 /* InformationViewController.swift */; };
+		C17A641B1F56598A004BD224 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17A641A1F56598A004BD224 /* SettingsViewController.swift */; };
 		C1DAF7711F64BF8700AEF9E3 /* TipCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DAF7701F64BF8700AEF9E3 /* TipCalculator.swift */; };
 /* End PBXBuildFile section */
 
@@ -34,7 +34,7 @@
 		C17580071F53CA12005FE948 /* Questions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		C17A64161F561FF8004BD224 /* QuestionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = QuestionView.swift; path = ../QuestionView.swift; sourceTree = "<group>"; };
 		C17A64181F562013004BD224 /* QuestionView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuestionView.xib; sourceTree = "<group>"; };
-		C17A641A1F56598A004BD224 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		C17A641A1F56598A004BD224 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		C1DAF7701F64BF8700AEF9E3 /* TipCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,7 +71,7 @@
 				C16C231D1F52AC2E00DC1086 /* Main.storyboard */,
 				C16C231F1F52AC8B00DC1086 /* QuestionsViewController.swift */,
 				C16C23211F52AD0200DC1086 /* ResultViewController.swift */,
-				C17A641A1F56598A004BD224 /* InformationViewController.swift */,
+				C17A641A1F56598A004BD224 /* SettingsViewController.swift */,
 				C17A64131F561B29004BD224 /* Views */,
 				C17A641C1F565997004BD224 /* Models */,
 				C16C231C1F52ABD700DC1086 /* Supporting */,
@@ -189,7 +189,7 @@
 				C16C230B1F52AB9E00DC1086 /* AppDelegate.swift in Sources */,
 				C16C23221F52AD0200DC1086 /* ResultViewController.swift in Sources */,
 				C11686AE1F6F53DD00496D7D /* Settings.swift in Sources */,
-				C17A641B1F56598A004BD224 /* InformationViewController.swift in Sources */,
+				C17A641B1F56598A004BD224 /* SettingsViewController.swift in Sources */,
 				C1DAF7711F64BF8700AEF9E3 /* TipCalculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

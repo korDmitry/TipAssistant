@@ -1,5 +1,5 @@
 //
-//  InformationViewController.swift
+//  SettingsViewController.swift
 //  TipAssistant
 //
 //  Created by Дмитрий Коробов on 29.08.17.
@@ -11,7 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
     
     
-    //MARK: VC lifecycle
+    //MARK: VC Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,9 +60,9 @@ class SettingsViewController: UIViewController {
     
     @IBAction func maxTipValueChanged(_ sender: UITextField) {
         
-        let value = Int(maxTipTextField.text!)!
+        let value = Int(maxTipTextField.text!)
         
-        if value >= 0 && value <= 100 {
+        if (value != nil) && (value! >= 0 && value! <= 100) {
             userDefaults.set(maxTipTextField.text, forKey: UserDefaultsKeys.maxTipValue)
         }
         else {

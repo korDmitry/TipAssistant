@@ -16,14 +16,18 @@ class QuestionsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         questionScrollView.delegate = self
-        questionPageControl.numberOfPages = questions.questionsArray.count
         setNavigationBar()
         setDefaultBorders()
+        setQuestions()
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        setUpQuestionScrollView(createQuestionViews())
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        checkEstablishmentChanges()
     }
     
     
@@ -69,7 +73,9 @@ class QuestionsViewController: UIViewController {
     
     //MARK: Properties
     
-    fileprivate var questions = Questions()
+    fileprivate var questions: Questions = RestaurantQuestions()
+    
+    private var currentEstablishment: String = ""
     
     fileprivate let borderMaxWidth = CGFloat(2)
     fileprivate let borderMinWidth = CGFloat(0.5)
@@ -121,6 +127,22 @@ class QuestionsViewController: UIViewController {
         badButton.clipsToBounds = true
     }
     
+    private func setQuestions() {
+        currentEstablishment = UserDefaults.standard.string(forKey: UserDefaultsKeys.establishment)!
+        
+        if currentEstablishment == Establishments.restaurant {
+            questions = RestaurantQuestions()
+        }
+        else if currentEstablishment == Establishments.cafe {
+            questions = CafeQuestions()
+        }
+        else {
+            questions = BarQuestions()
+        }
+        
+        setUpQuestionScrollView(createQuestionViews())
+}
+    
     private func createQuestionViews() -> [QuestionView] {
         var arrayOfQuestionViews: [QuestionView] = []
         for question in questions.questionsArray {
@@ -132,11 +154,23 @@ class QuestionsViewController: UIViewController {
     }
     
     private func setUpQuestionScrollView(_ questionViews:[QuestionView]) {
+        _ = questionScrollView.subviews.map{$0 .removeFromSuperview()}
+        questionPageControl.numberOfPages = questions.questionsArray.count
         questionScrollView.contentSize = CGSize(width: questionScrollView.frame.width * CGFloat(questions.questionsArray.count), height: questionScrollView.frame.height)
         
         for i in 0 ..< questions.questionsArray.count {
             questionViews[i].frame = CGRect(x: questionScrollView.frame.width * CGFloat(i), y: 0, width:  questionScrollView.frame.width, height:  questionScrollView.frame.height)
             questionScrollView.addSubview(questionViews[i])
+        }
+    }
+    
+    private func checkEstablishmentChanges() {
+        let establishment = UserDefaults.standard.string(forKey: UserDefaultsKeys.establishment)
+        if (establishment != currentEstablishment) {
+            setQuestions()
+            setDefaultBorders()
+            questionScrollView.scrollRectToVisible(CGRect(x: 0, y:0, width: questionScrollView.frame.width,
+                                                                    height: questionScrollView.frame.height), animated: true)
         }
     }
     

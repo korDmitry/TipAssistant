@@ -8,10 +8,28 @@
 
 import Foundation
 
-struct Questions {
-    var currentQuestion: Int = 0
-    var questionsArray:[Question] = [Decoration(), FirstDish(), SecondDish(), Dessert(), Service()]
+protocol Questions {
+    var currentQuestion: Int {get set}
+    var questionsArray: [Question] {get set}
 }
+
+struct RestaurantQuestions: Questions {
+    var currentQuestion: Int = 0
+    var questionsArray:[Question] = [Decoration(), Drinks(), FirstDish(), SecondDish(), Dessert(), Service()]
+}
+
+struct CafeQuestions: Questions {
+    var currentQuestion: Int = 0
+    var questionsArray:[Question] = [Decoration(), Drinks(), Food(), Service()]
+}
+
+struct BarQuestions: Questions {
+    var currentQuestion: Int = 0
+    var questionsArray: [Question] = [Decoration(), Drinks(), Service()]
+}
+
+
+//MARK: Questions
 
 protocol Question {
     var text: String {get}
@@ -26,6 +44,11 @@ struct Decoration: Question {
 struct Drinks: Question {
     let text: String = "Did you like the drinks?"
     var mark = Mark.none
+}
+
+struct Food: Question {
+    let text: String = "Did you like your food?"
+    var mark: Mark = Mark.none
 }
 
 struct FirstDish: Question {
