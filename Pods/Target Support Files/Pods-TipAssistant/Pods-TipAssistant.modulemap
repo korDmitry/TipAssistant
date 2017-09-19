@@ -1,0 +1,6 @@
+framework module Pods_TipAssistant {
+  umbrella header "Pods-TipAssistant-umbrella.h"
+
+  export *
+  module * { export * }
+}
