@@ -99,6 +99,9 @@ class QuestionsViewController: UIViewController {
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
+        
+        self.navigationController?.navigationBar.barTintColor = .purple
+        self.navigationController?.navigationBar.tintColor = .white
     }
     
     fileprivate func setDefaultBorders() {
