@@ -21,10 +21,6 @@ class QuestionsViewController: UIViewController {
         setQuestions()
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         checkEstablishmentChanges()
