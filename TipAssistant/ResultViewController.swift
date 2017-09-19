@@ -192,7 +192,7 @@ class ResultViewController: UIViewController {
     
     private func calculateTip() {
         tipMaxPercentText = userDefaults.string(forKey: UserDefaultsKeys.maxTipValue)!
-        tipPercentValue = Int((tipSlider.maximumValue - tipSlider.minimumValue)/2)
+        tipPercentValue = Int(tipSlider.maximumValue/2)
         
         let calculator = TipCalculator(questions: questions)
         tipPercentValue = calculator.calculateTip(withStartValue: tipPercentValue)
