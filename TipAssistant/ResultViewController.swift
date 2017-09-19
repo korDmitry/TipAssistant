@@ -31,6 +31,7 @@ class ResultViewController: UIViewController {
     
     @IBOutlet weak var billAmountTextField: UITextField!
     @IBOutlet weak var tipPercentLabel: UILabel!
+    @IBOutlet weak var tipMaxPercentLabel: UILabel!
     @IBOutlet weak var splitBillLabel: UILabel!
     
     @IBOutlet weak var costLabel: UILabel!
@@ -84,6 +85,17 @@ class ResultViewController: UIViewController {
             calculateSummary()
         }
     }
+    
+    private var tipMaxPercentText: String {
+        get {
+            return tipMaxPercentLabel.text!
+        }
+        set {
+            tipSlider.maximumValue = Float(newValue)!
+            tipMaxPercentLabel.text = newValue
+        }
+    }
+
     
     private var splitBillValue: Int {
         get {
@@ -179,6 +191,9 @@ class ResultViewController: UIViewController {
     }
     
     private func calculateTip() {
+        tipMaxPercentText = userDefaults.string(forKey: UserDefaultsKeys.maxTipValue)!
+        tipPercentValue = Int((tipSlider.maximumValue - tipSlider.minimumValue)/2)
+        
         let calculator = TipCalculator(questions: questions)
         tipPercentValue = calculator.calculateTip(withStartValue: tipPercentValue)
     }

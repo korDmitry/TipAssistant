@@ -48,7 +48,7 @@
                                 <rect key="frame" x="16" y="292" width="343" height="355"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="48t-qP-FrG">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="76.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="77"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Exellent">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -58,7 +58,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iek-nR-um1">
-                                        <rect key="frame" x="0.0" y="92.5" width="343" height="77"/>
+                                        <rect key="frame" x="0.0" y="93" width="343" height="76.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Good">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -68,7 +68,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18n-xZ-TRz">
-                                        <rect key="frame" x="0.0" y="185.5" width="343" height="76.5"/>
+                                        <rect key="frame" x="0.0" y="185.5" width="343" height="77"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Neutral">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,7 +78,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc3-nW-6NK">
-                                        <rect key="frame" x="0.0" y="278" width="343" height="77"/>
+                                        <rect key="frame" x="0.0" y="278.5" width="343" height="76.5"/>
                                         <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                         <state key="normal" title="Bad">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -242,6 +242,7 @@
                                                 <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="25"/>
                                                 <textInputTraits key="textInputTraits" keyboardType="numberPad" keyboardAppearance="alert"/>
                                                 <connections>
+                                                    <action selector="maxTipTextFieldWillChanged:" destination="Xic-q4-M3L" eventType="editingDidBegin" id="PG6-Wg-iZ3"/>
                                                     <action selector="maxTipValueChanged:" destination="Xic-q4-M3L" eventType="editingDidEnd" id="mnm-UV-DoL"/>
                                                 </connections>
                                             </textField>
@@ -557,6 +558,7 @@
                         <outlet property="splitBillLabel" destination="MJP-Lr-0d3" id="vef-QQ-JFn"/>
                         <outlet property="splitBillSlider" destination="Zlr-qI-eUx" id="CyQ-u8-CpC"/>
                         <outlet property="tipLabel" destination="LGC-OM-NUF" id="9ML-B2-TeL"/>
+                        <outlet property="tipMaxPercentLabel" destination="XaQ-ow-8vr" id="sla-yZ-msN"/>
                         <outlet property="tipPercentLabel" destination="lHh-Um-A4Z" id="4MR-JZ-NNL"/>
                         <outlet property="tipSlider" destination="hPb-90-7mD" id="8ij-8g-0GM"/>
                         <outlet property="tipStackView" destination="xt5-Hc-IdW" id="tmX-7C-h26"/>

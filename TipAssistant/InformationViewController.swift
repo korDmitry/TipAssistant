@@ -51,8 +51,26 @@ class SettingsViewController: UIViewController {
         userDefaults.set(title, forKey: UserDefaultsKeys.currency)
     }
     
+    
+    @IBAction func maxTipTextFieldWillChanged(_ sender: UITextField) {
+        maxTipTextField.text = ""
+        maxTipTextField.font = UIFont.systemFont(ofSize: 25.0, weight: UIFontWeightThin)
+        maxTipTextField.textColor = UIColor.white
+    }
+    
     @IBAction func maxTipValueChanged(_ sender: UITextField) {
-        userDefaults.set(maxTipTextField.text, forKey: UserDefaultsKeys.maxTipValue)
+        
+        let value = Int(maxTipTextField.text!)!
+        
+        if value >= 0 && value <= 100 {
+            userDefaults.set(maxTipTextField.text, forKey: UserDefaultsKeys.maxTipValue)
+        }
+        else {
+            let text = "Enter value from 0 to 100"
+            let warning = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName : UIColor.red])
+            maxTipTextField.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightThin)
+            maxTipTextField.attributedText = warning
+        }
     }
     
     
@@ -126,8 +144,7 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         
         let title = NSAttributedString(string: text, attributes: [
             NSFontAttributeName : UIFont.systemFont(ofSize: 25.0, weight: UIFontWeightThin),
-            NSForegroundColorAttributeName : UIColor.white
-            ])
+            NSForegroundColorAttributeName : UIColor.white])
         
         let label = (view as? UILabel) ?? UILabel()
         label.textColor = .black
