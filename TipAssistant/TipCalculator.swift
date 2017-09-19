@@ -12,20 +12,28 @@ struct TipCalculator {
     
     var questions: Questions
     
-    func calculateTip(withStartValue value:Int) -> Int {
-        var result = value
+    func calculateTip() -> Int {
+        
+        let maxTipValue = UserDefaults.standard.integer(forKey: UserDefaultsKeys.maxTipValue)
+        let questionsCount = questions.questionsArray.count
+        let imaginaryTopBorder = Double(maxTipValue) / 3 * 2
+        var result = imaginaryTopBorder/2
+        let bigStep = (imaginaryTopBorder-result)/Double(questionsCount)
+        let smallStep = bigStep/2
+
         for question in questions.questionsArray {
             switch question.mark {
             case .exellent:
-                result += 2
+                result += bigStep
             case .good:
-                result += 1
+                result += smallStep
             case .bad:
-                result -= 1
+                result -= bigStep
             default:
                 break
             }
         }
-        return result
+        let a = Int(round(result))
+        return a
     }
 }

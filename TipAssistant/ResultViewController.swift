@@ -195,7 +195,7 @@ class ResultViewController: UIViewController {
         tipPercentValue = Int(tipSlider.maximumValue/2)
         
         let calculator = TipCalculator(questions: questions)
-        tipPercentValue = calculator.calculateTip(withStartValue: tipPercentValue)
+        tipPercentValue = calculator.calculateTip()
     }
 }
 
