@@ -54,7 +54,7 @@ class SettingsViewController: UIViewController {
     
     @IBAction func maxTipTextFieldWillChanged(_ sender: UITextField) {
         maxTipTextField.text = ""
-        maxTipTextField.font = UIFont.systemFont(ofSize: 25.0, weight: UIFontWeightThin)
+        maxTipTextField.font = UIFont.systemFont(ofSize: 25.0, weight: UIFont.Weight.thin)
         maxTipTextField.textColor = UIColor.white
     }
     
@@ -67,8 +67,8 @@ class SettingsViewController: UIViewController {
         }
         else {
             let text = "Enter value from 0 to 100"
-            let warning = NSAttributedString(string: text, attributes: [NSForegroundColorAttributeName : UIColor.red])
-            maxTipTextField.font = UIFont.systemFont(ofSize: 15.0, weight: UIFontWeightThin)
+            let warning = NSAttributedString(string: text, attributes: [NSAttributedStringKey.foregroundColor : UIColor.red])
+            maxTipTextField.font = UIFont.systemFont(ofSize: 15.0, weight: UIFont.Weight.thin)
             maxTipTextField.attributedText = warning
         }
     }
@@ -143,8 +143,8 @@ extension SettingsViewController: UIPickerViewDataSource, UIPickerViewDelegate {
         let text = languages[row]
         
         let title = NSAttributedString(string: text, attributes: [
-            NSFontAttributeName : UIFont.systemFont(ofSize: 25.0, weight: UIFontWeightThin),
-            NSForegroundColorAttributeName : UIColor.white])
+            NSAttributedStringKey.font : UIFont.systemFont(ofSize: 25.0, weight: UIFont.Weight.thin),
+            NSAttributedStringKey.foregroundColor : UIColor.white])
         
         let label = (view as? UILabel) ?? UILabel()
         label.textColor = .black
