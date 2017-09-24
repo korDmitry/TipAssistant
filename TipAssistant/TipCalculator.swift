@@ -14,9 +14,8 @@ struct TipCalculator {
     
     func calculateTip() -> Int {
         
-        let maxTipValue = UserDefaults.standard.integer(forKey: UserDefaultsKeys.maxTipValue)
         let questionsCount = questions.questionsArray.count
-        let imaginaryTopBorder = Double(maxTipValue) / 3 * 2
+        let imaginaryTopBorder = 20.0
         var result = imaginaryTopBorder/2
         let bigStep = (imaginaryTopBorder-result)/Double(questionsCount)
         let smallStep = bigStep/2
