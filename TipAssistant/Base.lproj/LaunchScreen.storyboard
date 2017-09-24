@@ -32,10 +32,9 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Assistant" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLi-sc-GPI">
-                                <rect key="frame" x="57" y="80" width="300" height="100"/>
+                                <rect key="frame" x="104.66666666666669" y="80" width="205" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="Hlf-8k-vit"/>
-                                    <constraint firstAttribute="width" constant="300" id="fkI-Od-F6U"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
